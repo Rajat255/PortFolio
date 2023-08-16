@@ -26,7 +26,7 @@ body {
   color: white;
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 2; 
+  z-index: 2;
 }
 
 .header-left {
@@ -60,7 +60,7 @@ body {
 .timeline,
 .projects,
 .contact {
-    padding: 2rem 0; 
+  padding: 2rem 0;
 }
 
 .about {
@@ -78,6 +78,7 @@ body {
 .about img {
   width: 8rem;
 }
+
 .logos {
   display: flex;
   justify-content: center;
@@ -95,4 +96,29 @@ body {
 
 .logos a:hover {
   color: #d8ca51;
+}
+
+.certifications{
+  display: flex;
+}
+
+.cert-text{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 40%;
+}
+
+.cert-img{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  float: right;
+  width: 60%;
+}
+
+.cert-img img{
+  width: 8rem;
 }
