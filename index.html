@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Rajat's PortFolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/fa306be4d1.js" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
-    <header class="main-header">
+    <div class="main-header">
         <div class="header-left">
             <span class="logo">Rajat's Portfolio</span>
         </div>
@@ -20,12 +23,49 @@
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
-    </header>
-    <div id="about" class="about">About div</div>
-    <div id="certifications" class="certifications">certs</div>
-    <div id="timeline" class="timeline">timeline</div>
-    <div id="projects" class="projects">Projects</div>
-    <div id="contact" class="contact">Contact</div>
+    </div>
+    <div id="about" class="about">
+        <div class="myphoto">
+            <img src="assets/rajatimg.png" alt="myphoto">
+        </div>
+        <h1>Rajat's PortFolio</h1>
+        <div class="logos">
+            <a href="https://www.linkedin.com/in/rajatkhirid/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Rajat255/" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://hashnode.com/@rajat5262" target="_blank"><i class="fas fa-blog"></i></a>
+            <a href="mailto:rajatkhirid@gmail.com"><i class="far fa-envelope"></i></a>
+            <a href="path/to/resume.pdf" target="_blank" download="resume"><i class="far fa-file"></i></a>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+        <script>
+            VANTA.GLOBE({
+                el: "#about",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 400.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xff4081,
+                size: 0.80,
+                backgroundColor: 0x261641
+            })
+        </script>
+    </div>
+    <div id="certifications" class="certifications">
+        <h1>My Certs and Badges!</h1>
+    </div>
+    <div id="timeline" class="timeline">
+        <h1>Timeline</h1>
+    </div>
+    <div id="projects" class="projects">
+        <h1>Projects</h1>
+    </div>
+    <div id="contact" class="contact">
+        <h1>Contact</h1>
+    </div>
 </body>
 
 </html>

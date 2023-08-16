@@ -11,9 +11,14 @@ p {
 body {
   font-family: 'Poppins', sans-serif;
   font-size: medium;
+  background-color: rgb(226, 92, 92);
 }
 
 .main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,6 +26,7 @@ body {
   color: white;
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2; 
 }
 
 .header-left {
@@ -35,6 +41,7 @@ body {
 .header-right {
   display: flex;
   gap: 20px;
+  padding-right: 3rem;
 }
 
 .header-right a {
@@ -46,4 +53,46 @@ body {
 
 .header-right a:hover {
   color: lightgray;
+}
+
+.about,
+.certifications,
+.timeline,
+.projects,
+.contact {
+    padding: 2rem 0; 
+}
+
+.about {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(38, 22, 65);
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 80vh;
+}
+
+.about img {
+  width: 8rem;
+}
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.logos a {
+  margin: 0 15px;
+  font-size: 24px;
+  color: #b8b8b8;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.logos a:hover {
+  color: #d8ca51;
 }
