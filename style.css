@@ -10,7 +10,26 @@ p {
 
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: medium;
+  font-size: small;
+}
+
+img[title1]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out;
+}
+
+img[title]:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 .main-header {
@@ -43,6 +62,13 @@ body {
   padding-right: 3rem;
 }
 
+.header-left a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
 .header-right a {
   color: white;
   text-decoration: none;
@@ -51,6 +77,10 @@ body {
 }
 
 .header-right a:hover {
+  color: lightgray;
+}
+
+.header-left a:hover {
   color: lightgray;
 }
 
@@ -97,34 +127,50 @@ body {
   color: #d8ca51;
 }
 
-.certifications {
-  padding-top: 4rem;
+.profile {
   display: flex;
+  justify-content: center;
+
+}
+
+.profile-content {
+  max-width: 50%;
+  padding: 2rem 6rem;
+}
+
+.profile p {
+  padding-top: 2rem;
+}
+
+.certifications {
   background-color: #f5f5f5;
+  display: flex;
+  flex-direction: row;
 }
 
 .cert-text {
   display: flex;
-  text-align: center;
-  align-items: center;
   justify-content: center;
-  float: left;
-  width: 40%;
+  align-items: center;
+  text-align: center;
+  width: 35%;
+  overflow: hidden;
 }
 
 .cert-img {
+  width: auto;
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   text-align: center;
-}
-
-.cert-img-row1 .cert-img-row2 {
-  display: flex;
-  justify-content: space-around;
-
+  overflow: hidden;
 }
 
 .cert-img img {
-  width: 8rem;
+  border-radius: 10px;
+  height: 8rem;
+  padding: 0.5rem;
+  border: 3px lightblue solid;
 }
 
 .timeline {
@@ -134,11 +180,15 @@ body {
   background-color: #534646;
 }
 
+.timeline .fa {
+  color: gold;
+  font-size: 2rem;
+}
+
 .timeline h1 {
   text-align: center;
 }
 
-/* The actual timeline (the vertical ruler) */
 .timeline::after {
   content: '';
   position: absolute;
@@ -149,7 +199,6 @@ body {
   left: 8rem;
 }
 
-/* Container around content */
 .container {
   padding: 10px 40px;
   position: relative;
@@ -157,7 +206,6 @@ body {
   width: 70%;
 }
 
-/* The circles on the timeline */
 .container::after {
   content: '';
   position: absolute;
@@ -171,12 +219,10 @@ body {
   z-index: 1;
 }
 
-/* Place the container to the right */
 .right {
   left: 8.2rem;
 }
 
-/* Add arrows to the right container (pointing left) */
 .right::before {
   content: " ";
   height: 0;
@@ -190,12 +236,10 @@ body {
   border-color: transparent white transparent transparent;
 }
 
-/* Fix the circle for containers on the right side */
 .right::after {
   left: -16px;
 }
 
-/* The actual content */
 .content {
   padding: 20px 30px;
   background-color: white;
@@ -255,16 +299,18 @@ body {
 }
 
 .project-box {
-  max-width: 14rem;
+  flex: 0 0 calc(33%);
   min-width: 5rem;
-  background-color: #b7963c;
+  background-color: rgb(60, 30, 78);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   margin: 1rem 1rem;
   color: white;
-  transition: transform 0.3s ease-in-out;
   text-align: left;
+  margin: 1rem 0;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .project-box h2 {
@@ -273,12 +319,12 @@ body {
 }
 
 .project-box p {
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
 .project-link {
-  
+
   display: inline-block;
   background-color: white;
   color: #e68524;
@@ -295,23 +341,22 @@ body {
 }
 
 .contact {
-  padding: 100px 0;
-  text-align: center;
-  background-color: #f5f5f5;
-  display: flex; /* Add flex display to arrange items side by side */
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
+  padding: 1rem 0;
+  background-color: rgb(52, 51, 51);
+  color: white;
+  display: flex;
 }
 
 .contact h1 {
-  font-size: 36px;
   margin-bottom: 30px;
 }
 
+.contact a {
+  color: white;
+}
+
 .contact-info {
-  flex: 1; 
   text-align: left;
-  max-width: 600px;
   padding: 0 20px;
 }
 
@@ -321,49 +366,49 @@ body {
 }
 
 .contact-list li {
-  font-size: 18px;
-  margin-bottom: 15px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .contact-list i {
-  margin-right: 10px;
-  color: #007bff;
+  margin-right: 0.8rem;
+  color: white;
 }
 
 .site-map {
-  flex: 1; /* Allow the content to grow or shrink based on available space */
-  text-align: left;
-  padding: 0 20px;
+  flex: 1;
+  text-align: right;
+  padding: 0 2rem;
 }
 
 .site-map h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .sitemap-list {
   list-style: none;
-  padding: 0;
 }
 
 .sitemap-list li {
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .sitemap-list a {
   text-decoration: none;
-  color: #007bff;
+  color: white;
   transition: color 0.3s ease-in-out;
 }
 
 .sitemap-list a:hover {
-  color: #0056b3;
+  color: lightgray;
 }
+
 .footer {
-  background-color: #333;
+  background-color: #000000;
+  text-align: left;
+  padding: 0.5rem 2rem;
   color: white;
-  text-align: center;
-  padding: 10px 0;
 }
 
 .footer-content a {
@@ -373,5 +418,5 @@ body {
 }
 
 .footer-content a:hover {
-  color: #007bff;
+  color: lightgray;
 }
